@@ -34,3 +34,13 @@ if st.button("実行"):
 
     else:
         if height and weight:
+            
+            try:
+                bmi = round(int(weight) / ((int(height)/100) ** 2), 1)
+                st.write(f"BMI値: {bmi}")
+
+            except ValueError as e:
+                st.error("身長と体重は数値で入力してください。")
+
+        else:
+            st.error("身長と体重をどちらも入力してください。")
